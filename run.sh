@@ -19,4 +19,3 @@ singularity run \
     --home=home:${HOME} \
     --bind=/run/user/${UID} \
     --bind=$HOME/.ssh \
-

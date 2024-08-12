@@ -3,4 +3,3 @@ singularity build --fakeroot \
     --sandbox \
     lerobot \
     Singularity
-

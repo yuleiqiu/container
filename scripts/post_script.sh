@@ -24,7 +24,7 @@ apt-get update && apt-get install -y --no-install-recommends \
     libegl1 \
     freeglut3-dev \
     libglfw3 \
-    libglew2.0 \
+    libglew2.1 \
     libosmesa6 \
     libglew-dev \
     libnvidia-gl-535 \

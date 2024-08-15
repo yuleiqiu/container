@@ -4,22 +4,18 @@ DEBIAN_FRONTEND=noninteractive apt-get install -y keyboard-configuration
 DEBIAN_FRONTEND=noninteractive TZ="Europe/London" apt-get install -y tzdata
 apt-get -y upgrade
 
-apt-get install -y --force-yes \
-    wget \
-    tmux \
-    zip \
-    unzip \
-    git \
-    build-essential \
+apt-get update && apt-get install -y --no-install-recommends \
+    build-essential cmake \
+    git git-lfs openssh-client \
+    nano vim vim-gtk less util-linux tree \
+    htop atop nvtop \
+    sed gawk grep curl wget zip unzip \
+    tcpdump sysstat screen tmux \
+    libglib2.0-0 libgl1-mesa-glx libegl1-mesa \
+    python3 python3-pip python3-venv \
     software-properties-common \
-    pypy \
-    cmake \
-    curl \
-    xterm \
-    psmisc \
-    software-properties-common \
+    pypy xterm psmisc \
     apt-utils \
-    python3-pip \
     libxext6 \
     libx11-6 \
     libglvnd0 \
@@ -27,8 +23,13 @@ apt-get install -y --force-yes \
     libglx0 \
     libegl1 \
     freeglut3-dev \
+    libglfw3 \
+    libglew2.0 \
+    libosmesa6 \
+    libglew-dev \
+    libnvidia-gl-535 \
     && apt-get -y autoremove \
-    && apt-get clean
+    && apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # # Installation of NVidia Drivers and Cuda
 # apt install -y --force-yes \

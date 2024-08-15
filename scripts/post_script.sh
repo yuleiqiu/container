@@ -31,6 +31,15 @@ apt-get update && apt-get install -y --no-install-recommends \
     && apt-get -y autoremove \
     && apt-get clean && rm -rf /var/lib/apt/lists/*
 
+# Installation of miniconda3
+mkdir -p ~/miniconda3
+wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ~/miniconda3/miniconda.sh
+bash ~/miniconda3/miniconda.sh -b -u -p ~/miniconda3
+rm -rf ~/miniconda3/miniconda.sh
+~/miniconda3/bin/conda init bash
+conda config --set auto_activate_base false
+
+
 # # Installation of NVidia Drivers and Cuda
 # apt install -y --force-yes \
 #     nvidia-driver-470 \

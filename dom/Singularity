@@ -1,0 +1,18 @@
+bootstrap:docker
+from: nvidia/cuda:12.4.1-base-ubuntu22.04
+
+%labels
+    Author Yulei Qiu
+
+%environment
+    export PATH="opt/venv/bin:$PATH"
+    export MUJOCO_GL = "egl"
+
+%files
+    scripts /scripts
+
+%post
+    /scripts/post_script.sh
+
+%runscript
+    exec /bin/bash "$@" --rcfile /scripts/run_script.sh

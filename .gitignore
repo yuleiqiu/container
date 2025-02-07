@@ -1,9 +1,0 @@
-workdir/*
-!workdir/.gitkeep
-
-lerobot
-
-!home/
-home/*
-
-!home/.bashrc
